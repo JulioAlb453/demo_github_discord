@@ -6,6 +6,6 @@ func Routes(router *gin.Engine) {
 	routes := router.Group("pull_request")
 
 	{
-		routes.POST("/process", HandlePullRequestEvent)
+		routes.POST("/success", HandlePullRequestEvent)
 	}
 }
