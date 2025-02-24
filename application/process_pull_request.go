@@ -7,14 +7,14 @@ import (
 	"log"
 )
 
-func ProcessPullRequestEvent (rawData []byte) int{
+func ProcessPullRequestEvent(rawData []byte) int {
 	var eventPayload value_objects.PullRequestEvent
 
 	if err := json.Unmarshal(rawData, &eventPayload); err != nil {
 		return 403
 	}
 
-	log.Println("evento pull request recibido con acción de %s ", eventPayload)
+	log.Printf("Evento pull request recibido con accion de %s", eventPayload.Action)
 
 	return 200
 }

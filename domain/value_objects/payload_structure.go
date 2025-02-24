@@ -1,14 +1,14 @@
 package value_object
 
 type PullRequestEvent struct {
-	Action       string      `json:"action"`
-	PullResquest PullRequest `json:"pull_request"`
+	Action      string      `json:"action"`
+	PullRequest PullRequest `json:"pull_request"`
 }
 
 type PullRequest struct {
 	ID    int    `json:"id"`
 	Title string `json:"title"`
-	Head   Branch `json: head"`
+	Head  Branch `json:"head"`
 	Base  Branch `json:"base"`
 	URL   string `json:"url"`
 }
