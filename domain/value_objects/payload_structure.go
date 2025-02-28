@@ -1,26 +1,30 @@
-package value_object
+package value_objects
 
 type PullRequestEvent struct {
 	Action      string      `json:"action"`
-	Repository  Repository  `json:"repository"`
 	PullRequest PullRequest `json:"pull_request"`
+	Repository  Repository  `json:"repository"`
 }
 
 type Repository struct {
-	Name string `json:"name"`
+	ID       int    `json:"id"`
+	FullName string `json:"full_name"`
+}
+type PullRequest struct {
+	ID      int    `json:"id"`
+	Title   string `json:"title"`
+	User    User   `json:"user"`
+	Head    Branch `json:"head"`
+	Base    Branch `json:"base"`
+	URL     string `json:"url"`
+	HTMLURL string `json:"html_url"`
 }
 
-type PullRequest struct {
-	ID   int `json:"id"`
-	User struct {
-		Login string `json:"login"`
-	}
-	Title string `json:"title"`
-	Base  struct {
-		Ref string `json:"base"`
-	}
-	Head struct {
-		Ref string `json:"head"`
-	}
-	URL string `json:"url"`
+type User struct {
+	Login string `json:"login"`
+}
+
+type Branch struct {
+	Ref string `json:"ref"`
+	SHA string `json:"sha"`
 }
