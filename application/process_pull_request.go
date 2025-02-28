@@ -3,7 +3,7 @@ package application
 import (
 	"encoding/json"
 	value_objects "github/domain/value_objects"
-
+	// "html"
 	"log"
 )
 
@@ -16,5 +16,10 @@ func ProcessPullRequestEvent(rawData []byte) int {
 
 	log.Printf("Evento pull request recibido con accion de %s", eventPayload.Action)
 
+	// base := eventPayload.PullRequest.Base.Ref
+	// head := eventPayload.PullRequest.
+	// html_url
+	// user
+	// reposotiry_full_name
 	return 200
 }
